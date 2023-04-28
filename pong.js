@@ -20,19 +20,13 @@ let paddleSpeed = 10;
 let leftScore = 0;
 let rightScore = 0;
 
-// Move paddles based on keyboard input
-document.addEventListener("keydown", function (event) {
-  if (event.key == "w") {
-    leftPaddleY -= paddleSpeed;
-  }
-  if (event.key == "s") {
-    leftPaddleY += paddleSpeed;
-  }
+// Move right paddle based on keyboard input
+document.addEventListener("keydown", function(event) {
   if (event.key == "ArrowUp") {
-    rightPaddleY -= paddleSpeed;
+      rightPaddleY -= paddleSpeed;
   }
   if (event.key == "ArrowDown") {
-    rightPaddleY += paddleSpeed;
+      rightPaddleY += paddleSpeed;
   }
 });
 
@@ -94,8 +88,7 @@ function update() {
     ballSpeedX = -ballSpeedX;
   }
 
-  // Check for collision with
-  // top and bottom walls
+  // Check for collision with top and bottom walls
   if (ballY - ballRadius < 0 || ballY + ballRadius > canvas.height) {
     ballSpeedY = -ballSpeedY;
   }
